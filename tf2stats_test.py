@@ -25,3 +25,9 @@ class TF2StatsTest(unittest.TestCase):
 
     def test_tf2_get_game_icon(self):
         self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/440/e3f595a92552da3d664ad00277fad2107345f743.jpg', self.stats['gameIcon'])
+
+    def test_tf2_get_game_logo(self):
+        self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/440/07385eb55b5ba974aebbe74d3c99626bda7920b8.jpg', self.stats['gameLogo'])
+
+    def test_tf2_get_game_logo_small(self):
+        self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/440/07385eb55b5ba974aebbe74d3c99626bda7920b8_thumb.jpg', self.stats['gameLogoSmall'])
