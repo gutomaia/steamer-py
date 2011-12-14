@@ -11,5 +11,11 @@ class TF2StatsTest(unittest.TestCase):
     def tearDown(self):
         self.stats = None;
 
-    def testOk(self):
-        self.assertTrue(True)
+    def test_tf2_get_visibility_state(self):
+        self.assertEquals(3, self.stats['visibilityState'])
+
+    def test_tf2_get_game_friendly_name(self):
+        self.assertEquals('TF2', self.stats['gameFriendlyName'])
+
+    def test_tf2_get_game_name(self):
+        self.assertEquals('Team Fortress 2', self.stats['gameName'])
