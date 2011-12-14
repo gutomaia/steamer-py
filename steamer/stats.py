@@ -1,3 +1,4 @@
+
 def get_stats(username, game):
     stats = dict(
         visibilityState = 3,
@@ -18,4 +19,7 @@ def get_stats(username, game):
         stats['gameIcon'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/2e478fc6874d06ae5baf0d147f6f21203291aa02.jpg'
         stats['gameLogo'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/d2a1119ddc202fab81d9b87048f495cbd6377502.jpg'
         stats['gameLogoSmall'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/d2a1119ddc202fab81d9b87048f495cbd6377502_thumb.jpg'
+    elif game == 'l4d2':
+        stats['gameFriendlyName'] = 'L4D2'
+        stats['gameName'] = 'Left 4 Dead 2'
     return stats
