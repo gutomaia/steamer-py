@@ -31,3 +31,9 @@ class TF2StatsTest(unittest.TestCase):
 
     def test_tf2_get_game_logo_small(self):
         self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/440/07385eb55b5ba974aebbe74d3c99626bda7920b8_thumb.jpg', self.stats['gameLogoSmall'])
+
+    def test_tf2_get_player_steam_id64(self):
+        self.assertEquals(76561197985077150, self.stats['steamID64'])
+
+    def test_tf2_get_player_custom_url(self):
+        self.assertEquals('gutomaia', self.stats['playerCustomURL'])
