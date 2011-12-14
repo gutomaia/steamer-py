@@ -19,3 +19,6 @@ class TF2StatsTest(unittest.TestCase):
 
     def test_tf2_get_game_name(self):
         self.assertEquals('Team Fortress 2', self.stats['gameName'])
+    
+    def test_tf2_get_game_link(self):
+        self.assertEquals("http://store.steampowered.com/app/440", self.stats['gameLink']);
