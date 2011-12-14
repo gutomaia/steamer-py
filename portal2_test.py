@@ -12,3 +12,6 @@ class Portal2StatsTest(unittest.TestCase):
 
     def test_portal2_get_visibility_state(self):
         self.assertEquals(3, self.stats['visibilityState'])
+
+    def test_portal2_get_game_friendly_name(self):
+        self.assertEquals('Portal2', self.stats['gameFriendlyName'])

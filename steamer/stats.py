@@ -1,5 +1,5 @@
 def get_stats(username, game):
-    return dict(
+    stats = dict(
         visibilityState = 3,
         gameFriendlyName = 'TF2',
         gameName = 'Team Fortress 2',
@@ -10,3 +10,8 @@ def get_stats(username, game):
         steamID64 = 76561197985077150,
         playerCustomURL = 'gutomaia'
         )
+
+    if game == 'portal2':
+        stats['gameFriendlyName'] = 'Portal2'
+
+    return stats
