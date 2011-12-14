@@ -22,4 +22,5 @@ def get_stats(username, game):
     elif game == 'l4d2':
         stats['gameFriendlyName'] = 'L4D2'
         stats['gameName'] = 'Left 4 Dead 2'
+        stats['gameLink'] = 'http://store.steampowered.com/app/550'
     return stats

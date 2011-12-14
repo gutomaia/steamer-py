@@ -18,3 +18,6 @@ class L4D2StatsTest(unittest.TestCase):
 
     def test_l4d2_get_game_name(self):
         self.assertEquals('Left 4 Dead 2', self.stats['gameName'])
+
+    def test_l4d2_get_game_link(self):
+        self.assertEquals('http://store.steampowered.com/app/550', self.stats['gameLink'])
