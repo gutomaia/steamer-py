@@ -23,4 +23,6 @@ def get_stats(username, game):
         stats['gameFriendlyName'] = 'L4D2'
         stats['gameName'] = 'Left 4 Dead 2'
         stats['gameLink'] = 'http://store.steampowered.com/app/550'
+        stats['gameIcon'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg'
+        stats['gameLogo'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/550/205863cc21e751a576d6fff851984b3170684142.jpg'
     return stats

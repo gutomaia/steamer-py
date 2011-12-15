@@ -21,3 +21,9 @@ class L4D2StatsTest(unittest.TestCase):
 
     def test_l4d2_get_game_link(self):
         self.assertEquals('http://store.steampowered.com/app/550', self.stats['gameLink'])
+
+    def test_l4d2_get_game_icon(self):
+        self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg', self.stats['gameIcon'])
+
+    def test_l4d2_get_game_logo(self):
+        self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/550/205863cc21e751a576d6fff851984b3170684142.jpg', self.stats['gameLogo'])
