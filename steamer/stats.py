@@ -25,4 +25,8 @@ def get_stats(username, game):
         stats['gameLink'] = 'http://store.steampowered.com/app/550'
         stats['gameIcon'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg'
         stats['gameLogo'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/550/205863cc21e751a576d6fff851984b3170684142.jpg'
+        stats['gameLogoSmall'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/550/205863cc21e751a576d6fff851984b3170684142_thumb.jpg'
     return stats
+
+def get_achievements(username, game):
+        pass
