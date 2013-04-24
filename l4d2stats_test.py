@@ -39,3 +39,6 @@ class L4D2StatsTest(unittest.TestCase):
 
     def test_get_achievements(self):
         achievements = get_achievements("gutomaia", "L4D2")
+
+if __name__ == '__main__':
+    unittest.main()

@@ -36,3 +36,6 @@ class Portal2StatsTest(unittest.TestCase):
 
     def test_portal2_get_player_custom_url(self):
         self.assertEquals('gutomaia', self.stats['playerCustomURL'])
+
+if __name__ == '__main__':
+    unittest.main()
