@@ -5,7 +5,7 @@ from steamer.stats import get_stats
 class TF2StatsTest(unittest.TestCase):
 
     def setUp(self):
-        self.stats = get_stats("gutomaia", "tf2") #TODO implement with document later on
+        self.stats = get_stats("gutomaia", "tf2", "fixtures/gutomaia-tf2.xml") #TODO implement with document later on
 
     def tearDown(self):
         self.stats = None;
@@ -20,7 +20,7 @@ class TF2StatsTest(unittest.TestCase):
         self.assertEquals('Team Fortress 2', self.stats['gameName'])
     
     def test_tf2_get_game_link(self):
-        self.assertEquals('http://store.steampowered.com/app/440', self.stats['gameLink']);
+        self.assertEquals('http://steamcommunity.com/app/440', self.stats['gameLink']);
 
     def test_tf2_get_game_icon(self):
         self.assertEquals('http://media.steampowered.com/steamcommunity/public/images/apps/440/e3f595a92552da3d664ad00277fad2107345f743.jpg', self.stats['gameIcon'])
