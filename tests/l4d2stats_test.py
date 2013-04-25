@@ -5,7 +5,7 @@ from steamer.stats import get_stats, get_achievements
 class L4D2StatsTest(unittest.TestCase):
 
     def setUp(self):
-        self.stats = get_stats("gutomaia", "l4d2") #TODO implement with document later on
+        self.stats = get_stats("gutomaia", "l4d2", 'fixtures/gutomaia-l4d2.xml')
 
     def tearDown(self):
         self.stats = None;
