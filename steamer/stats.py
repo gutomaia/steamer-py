@@ -1,5 +1,5 @@
 
-def get_stats(username, game):
+def get_stats(username, game, xmlfile=None):
     stats = dict(
         visibilityState = 3,
         gameFriendlyName = 'TF2',
@@ -13,12 +13,15 @@ def get_stats(username, game):
         )
 
     if game == 'portal2':
-        stats['gameFriendlyName'] = 'Portal2'
-        stats['gameName'] = 'Portal 2'
-        stats['gameLink'] = 'http://store.steampowered.com/app/620'
-        stats['gameIcon'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/2e478fc6874d06ae5baf0d147f6f21203291aa02.jpg'
-        stats['gameLogo'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/d2a1119ddc202fab81d9b87048f495cbd6377502.jpg'
-        stats['gameLogoSmall'] = 'http://media.steampowered.com/steamcommunity/public/images/apps/620/d2a1119ddc202fab81d9b87048f495cbd6377502_thumb.jpg'
+        from lxml import objectify
+        content = open(xmlfile).read()
+        s = objectify.fromstring(content)
+        stats['gameFriendlyName'] = s.game.gameFriendlyName
+        stats['gameName'] = s.game.gameName
+        stats['gameLink'] = s.game.gameLink
+        stats['gameIcon'] = s.game.gameIcon
+        stats['gameLogo'] = s.game.gameLogo
+        stats['gameLogoSmall'] = s.game.gameLogoSmall
     elif game == 'l4d2':
         stats['gameFriendlyName'] = 'L4D2'
         stats['gameName'] = 'Left 4 Dead 2'

@@ -5,7 +5,7 @@ from steamer.stats import get_stats
 class Portal2StatsTest(unittest.TestCase):
 
     def setUp(self):
-        self.stats = get_stats("gutomaia", "portal2") #TODO implement with document later on
+        self.stats = get_stats("gutomaia", "portal2", 'fixtures/gutomaia-portal2.xml') #TODO implement with document later on
 
     def tearDown(self):
         self.stats = None;
