@@ -4,11 +4,13 @@ from steamer.stats import get_stats, get_achievements
 
 class L4D2StatsTest(unittest.TestCase):
 
-    def setUp(self):
-        self.stats = get_stats("gutomaia", "l4d2", 'fixtures/gutomaia-l4d2.xml')
+    @classmethod
+    def setUpClass(cls):
+        cls.stats = get_stats("gutomaia", "l4d2", 'fixtures/gutomaia-l4d2.xml')
 
-    def tearDown(self):
-        self.stats = None;
+    @classmethod
+    def tearDownClass(cls):
+        cls.stats = None
 
     def test_l4d2_get_visibility_state(self):
         self.assertEquals(3, self.stats['visibilityState'])

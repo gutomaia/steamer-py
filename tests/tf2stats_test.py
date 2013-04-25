@@ -4,11 +4,13 @@ from steamer.stats import get_stats
 
 class TF2StatsTest(unittest.TestCase):
 
-    def setUp(self):
-        self.stats = get_stats("gutomaia", "tf2", "fixtures/gutomaia-tf2.xml") #TODO implement with document later on
+    @classmethod
+    def setUpClass(cls):
+        cls.stats = get_stats("gutomaia", "tf2", 'fixtures/gutomaia-tf2.xml')
 
-    def tearDown(self):
-        self.stats = None;
+    @classmethod
+    def tearDownClass(cls):
+        cls.stats = None
 
     def test_tf2_get_visibility_state(self):
         self.assertEquals(3, self.stats['visibilityState'])
