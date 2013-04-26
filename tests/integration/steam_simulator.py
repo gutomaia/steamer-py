@@ -14,6 +14,7 @@ class game_page(object):
         f = open('fixtures/%s-%s.xml' % (user, game))
         xml = f.read()
         f.close()
+        web.header('Content-Length', len(xml))
         return xml
 
 
@@ -38,4 +39,4 @@ class SteamSimulator(threading.Thread):
 
 if __name__ == "__main__":
     sim = SteamSimulator()
-    sim.start()
+    sim.run()
