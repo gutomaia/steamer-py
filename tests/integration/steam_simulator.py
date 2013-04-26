@@ -11,7 +11,7 @@ urls = (
 
 class game_page(object):
     def GET(self, user, game):
-        f = open('fixtures/gutomaia-l4d2.xml')
+        f = open('fixtures/%s-%s.xml' % (user, game))
         xml = f.read()
         f.close()
         return xml

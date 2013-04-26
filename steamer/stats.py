@@ -7,7 +7,9 @@ def get_stats(username, game, xmlfile=None):
     if xmlfile != None:
         content = open(xmlfile).read()
     else:
-        r = requests.get("http://localhost:8080/id/gutomaia/stats/tf2?xml=1")
+        r = requests.get(
+            "http://localhost:8080/id/%s/stats/%s?xml=1" % (username, game)
+        )
         if r.status_code != 200:
             raise Exception
         content = r.content
