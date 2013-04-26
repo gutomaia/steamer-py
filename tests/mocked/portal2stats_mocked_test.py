@@ -9,9 +9,9 @@ import mock
 class Portal2StatsMockedTest(Portal2StatsTest):
 
     @classmethod
-    @mock.patch('steamer.stats.requests')
-    def setUpClass(cls, requests_mocked):
-        #requests_mocked = mock.Mock('steamer.stats.requests')
+    def setUpClass(cls):
+        cls.patcher = mock.patch('steamer.stats.requests')
+        requests_mocked = cls.patcher.start()
         content = open('fixtures/gutomaia-portal2.xml').read()
         response = mock.Mock()
         response.content = content
@@ -21,6 +21,7 @@ class Portal2StatsMockedTest(Portal2StatsTest):
 
     @classmethod
     def tearDownClass(cls):
+        cls.patcher.stop()
         cls.stats = None
 
 if __name__ == '__main__':
