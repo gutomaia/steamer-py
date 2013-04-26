@@ -30,7 +30,6 @@ class SteamSimulator(threading.Thread):
         self.app.run()
 
     def stop(self):
-        self.join(3)
         self.app.stop()
         self._stop.set()
 
