@@ -16,8 +16,8 @@ class TF2StatsIntegrationTest(TF2StatsTest):
     def tearDownClass(cls):
         cls.stats = None;
         cls.sim.stop()
-        #while not cls.sim.stopped():
-        #    sleep(0.1)
+        while not cls.sim.stopped():
+            sleep(0.1)
 
 if __name__ == '__main__':
     unittest.main()
