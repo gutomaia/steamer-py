@@ -10,8 +10,8 @@ class L4D2StatsIntegrationTest(L4D2StatsTest):
     def setUpClass(cls):
         cls.sim = SteamSimulator()
         cls.sim.start()
-        cls.stats = get_stats("gutomaia", "l4d2", 'fixtures/gutomaia-l4d2.xml')
-    
+        cls.stats = get_stats("gutomaia", "l4d2")
+
     @classmethod
     def tearDownClass(cls):
         cls.stats = None;

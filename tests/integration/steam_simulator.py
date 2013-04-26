@@ -6,12 +6,15 @@ import requests
 
 
 urls = (
-    '/(.*)', 'ok_page'
+    '/id/(\w+)/stats/(\w+)', 'game_page'
 )
 
-class ok_page(object):
-    def GET(self, request):               
-        return "ok"
+class game_page(object):
+    def GET(self, user, game):
+        f = open('fixtures/gutomaia-l4d2.xml')
+        xml = f.read()
+        f.close()
+        return xml
 
 
 class SteamSimulator(threading.Thread):
@@ -32,3 +35,7 @@ class SteamSimulator(threading.Thread):
 
     def stopped(self):
         return self._stop.isSet()
+
+if __name__ == "__main__":
+    sim = SteamSimulator()
+    sim.start()

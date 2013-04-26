@@ -1,7 +1,17 @@
 from lxml import objectify
 
+import requests
+
 def get_stats(username, game, xmlfile=None):
-    content = open(xmlfile).read()
+
+    if xmlfile != None:
+        content = open(xmlfile).read()
+    else:
+        r = requests.get("http://localhost:8080/id/gutomaia/stats/tf2?xml=1")
+        if r.status_code != 200:
+            raise Exception
+        content = r.content
+
     s = objectify.fromstring(content)
 
     stats = dict(
