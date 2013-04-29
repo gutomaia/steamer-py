@@ -4,3 +4,4 @@ Feature: Team Fortress 2 status
     Given gutomaia as user
      When he asks for the tf2 status
      Then the gameName is Team Fortress 2
+     And the gameFriendlyName is TF2
