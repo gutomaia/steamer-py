@@ -1,21 +1,22 @@
 from behave import *
+from behave.matchers import register_type
+
 from steamer.stats import get_stats
 from tests.integration.steam_simulator import SteamSimulator
 
+from behave.matchers import register_type
+register_type(username=lambda s: s)
+register_type(string=lambda s: s)
 
-@given(r'gutomaia as user')
-def impl(context):
-    context.username = 'gutomaia'
+@given(r'{username:username} as user')
+def impl(context, username):
+    context.username = username
 
-@when(u'he asks for the tf2 status')
-def impl(context):
-    context.game = 'tf2'
+@when(u'he asks for the {game:string} status')
+def impl(context, game):
+    context.game = game
     context.stats = get_stats(context.username, context.game)
 
-@then(u'the gameName is Team Fortress 2')
-def impl(context):
-	assert context.stats['gameName'] == 'Team Fortress 2'
-
-@then(u'the gameFriendlyName is TF2')
-def impl(context):
-	assert context.stats['gameFriendlyName'] == 'TF2'
+@then(u'the {key:string} is {value:string}')
+def impl(context, key, value):
+	assert context.stats[key] == value
