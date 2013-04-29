@@ -19,4 +19,4 @@ def impl(context, game):
 
 @then(u'the {key:string} is {value:string}')
 def impl(context, key, value):
-	assert context.stats[key] == value
+	assert context.stats[key] == value, 'The %s should be %s and it is %s' % (key, value, context.stats[key])
